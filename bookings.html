@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | STACKLY Travel</title>
+
+    <meta name="description"
+        content="Manage your travel bookings with STACKLY Travel. View your trips, booking details, and upcoming adventures.">
+
+    <meta name="theme-color" content="#101d3a">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="common.css">
+
+    <!-- Bookings CSS -->
+    <link rel="stylesheet" href="bookings.css">
+
+</head>
+
+<body class="bookings-page">
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div id="preloader"></div>
+
+
+    <!-- =========================================
+         COMMON HEADER
+    ========================================== -->
+
+    <div id="site-header"></div>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =========================================
+             BOOKINGS HERO
+        ========================================== -->
+
+        <section class="bookings-hero">
+
+            <div class="bookings-hero-overlay"></div>
+
+            <div class="bookings-hero-content">
+
+                <span class="bookings-hero-label">
+                    ✈️ YOUR TRAVEL DASHBOARD
+                </span>
+
+                <h1>
+                    Your Journeys,
+                    <span>All in One Place</span>
+                </h1>
+
+                <p>
+                    Keep track of your travel plans, explore your upcoming
+                    adventures, and manage your bookings with ease.
+                </p>
+
+                <a href="#my-bookings" class="bookings-hero-btn">
+                    View My Bookings
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             BOOKING OVERVIEW
+        ========================================== -->
+
+        <section class="booking-overview-section">
+
+            <div class="booking-overview-container">
+
+                <div class="booking-overview-heading">
+
+                    <div>
+
+                        <span class="booking-section-label">
+                            YOUR TRAVEL OVERVIEW
+                        </span>
+
+                        <h2>
+                            Travel at a <span>Glance</span>
+                        </h2>
+
+                        <p>
+                            A quick overview of your travel activity.
+                        </p>
+
+                    </div>
+
+                    <a href="destinations.html" class="booking-explore-btn">
+                        Explore Destinations
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Overview Cards -->
+
+                <div class="booking-stats-grid">
+
+
+                    <!-- Total Bookings -->
+
+                    <div class="booking-stat-card">
+
+                        <div class="booking-stat-icon booking-stat-blue">
+                            📋
+                        </div>
+
+                        <div class="booking-stat-info">
+
+                            <span class="booking-stat-label">
+                                Total Bookings
+                            </span>
+
+                            <h3 id="totalBookingsCount">
+                                0
+                            </h3>
+
+                            <span class="booking-stat-description">
+                                All your travel plans
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Upcoming Trips -->
+
+                    <div class="booking-stat-card">
+
+                        <div class="booking-stat-icon booking-stat-orange">
+                            🧳
+                        </div>
+
+                        <div class="booking-stat-info">
+
+                            <span class="booking-stat-label">
+                                Upcoming Trips
+                            </span>
+
+                            <h3 id="upcomingBookingsCount">
+                                0
+                            </h3>
+
+                            <span class="booking-stat-description">
+                                Adventures ahead
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Completed Trips -->
+
+                    <div class="booking-stat-card">
+
+                        <div class="booking-stat-icon booking-stat-green">
+                            🌍
+                        </div>
+
+                        <div class="booking-stat-info">
+
+                            <span class="booking-stat-label">
+                                Completed Trips
+                            </span>
+
+                            <h3 id="completedBookingsCount">
+                                0
+                            </h3>
+
+                            <span class="booking-stat-description">
+                                Memories collected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pending -->
+
+                    <div class="booking-stat-card">
+
+                        <div class="booking-stat-icon booking-stat-purple">
+                            ⏳
+                        </div>
+
+                        <div class="booking-stat-info">
+
+                            <span class="booking-stat-label">
+                                Pending Bookings
+                            </span>
+
+                            <h3 id="pendingBookingsCount">
+                                0
+                            </h3>
+
+                            <span class="booking-stat-description">
+                                Awaiting confirmation
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- =====================================================
+             MY BOOKINGS SECTION
+        ====================================================== -->
+
+        <section class="my-bookings-section" id="my-bookings">
+
+            <div class="bookings-container">
+
+                <!-- Section Heading -->
+                <div class="bookings-section-heading">
+
+                    <div class="bookings-heading-content">
+                        <span class="section-eyebrow">
+                            YOUR TRAVEL HISTORY
+                        </span>
+
+                        <h2>
+                            Manage Your <span>Bookings</span>
+                        </h2>
+
+                        <p>
+                            Keep track of your upcoming adventures,
+                            completed trips, and pending reservations.
+                        </p>
+                    </div>
+
+                    <a href="destinations.html" class="booking-explore-btn">
+                        <span>Explore Destinations</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- Booking Filters -->
+                <div class="booking-filter-wrapper">
+
+                    <div class="booking-filter-tabs" role="tablist">
+
+                        <button
+                            class="booking-filter-btn active"
+                            data-filter="all"
+                            type="button"
+                        >
+                            All Bookings
+                            <span id="allBookingsFilterCount">0</span>
+                        </button>
+
+                        <button
+                            class="booking-filter-btn"
+                            data-filter="upcoming"
+                            type="button"
+                        >
+                            Upcoming
+                            <span id="upcomingFilterCount">0</span>
+                        </button>
+
+                        <button
+                            class="booking-filter-btn"
+                            data-filter="completed"
+                            type="button"
+                        >
+                            Completed
+                            <span id="completedFilterCount">0</span>
+                        </button>
+
+                        <button
+                            class="booking-filter-btn"
+                            data-filter="pending"
+                            type="button"
+                        >
+                            Pending
+                            <span id="pendingFilterCount">0</span>
+                        </button>
+
+                        <button
+                            class="booking-filter-btn"
+                            data-filter="cancelled"
+                            type="button"
+                        >
+                            Cancelled
+                            <span id="cancelledFilterCount">0</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Booking Search -->
+                    <div class="booking-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="bookingSearchInput"
+                            placeholder="Search destination or booking ID..."
+                            aria-label="Search bookings"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Booking List -->
+                <div class="booking-list-wrapper">
+
+                    <div
+                        class="booking-list-container"
+                        id="bookingListContainer"
+                    >
+
+                        <!-- Booking cards will be rendered by bookings.js -->
+
+                    </div>
+
+
+                    <!-- Empty State -->
+                    <div
+                        class="booking-empty-state"
+                        id="bookingEmptyState"
+                        hidden
+                    >
+
+                        <div class="booking-empty-icon">
+                            <i class="fa-solid fa-suitcase-rolling"></i>
+                        </div>
+
+                        <h3>No bookings found</h3>
+
+                        <p>
+                            You don't have any bookings in this category yet.
+                            Start planning your next adventure!
+                        </p>
+
+                        <a href="destinations.html" class="booking-empty-btn">
+                            Explore Destinations
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TRAVEL CTA SECTION
+        ====================================================== -->
+
+        <section class="booking-travel-cta">
+
+            <div class="booking-travel-cta-overlay"></div>
+
+            <div class="booking-travel-cta-container">
+
+                <div class="booking-travel-cta-content">
+
+                    <span class="section-eyebrow">
+                        YOUR NEXT ADVENTURE AWAITS
+                    </span>
+
+                    <h2>
+                        The World Is Waiting
+                        <span>For You.</span>
+                    </h2>
+
+                    <p>
+                        Discover extraordinary destinations, unforgettable
+                        experiences, and beautiful places with STACKLY Travel.
+                    </p>
+
+                    <div class="booking-travel-cta-actions">
+
+                        <a href="destinations.html" class="booking-cta-primary">
+                            Discover Destinations
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="flights.html" class="booking-cta-secondary">
+                            Find Flights
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         COMMON FOOTER
+    ====================================================== -->
+
+    <div id="site-footer"></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="common.js"></script>
+    <script src="bookings.js"></script>
+
+</body>
+</html>

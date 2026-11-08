@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flights | STACKLY Travel</title>
+
+    <meta name="description"
+        content="Discover and plan your next journey with STACKLY Travel. Explore flight routes and travel destinations around the world.">
+
+    <meta name="theme-color" content="#101d3a">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="common.css">
+
+    <!-- Flights CSS -->
+    <link rel="stylesheet" href="flights.css">
+
+</head>
+
+<body class="flights-page">
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div id="preloader"></div>
+
+
+    <!-- =========================================
+         COMMON HEADER
+    ========================================== -->
+
+    <div id="site-header"></div>
+
+
+    <main>
+
+        <!-- =========================================
+             FLIGHTS HERO SECTION
+        ========================================== -->
+
+        <section class="flights-hero-section">
+
+            <div class="flights-hero-overlay"></div>
+
+            <div class="flights-hero-content">
+
+                <span class="flight-section-label">
+                    YOUR JOURNEY STARTS HERE
+                </span>
+
+                <h1>
+                    Discover the World.
+                    <span>Fly Away.</span>
+                </h1>
+
+                <p>
+                    Find your perfect flight and make every journey unforgettable
+                    with STACKLY Travel.
+                </p>
+
+                <a href="#flight-search" class="flights-hero-btn">
+                    Explore Flights
+                    <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="flights-hero-bottom">
+
+                <div class="flights-hero-stat">
+                    <strong>100+</strong>
+                    <span>Destinations</span>
+                </div>
+
+                <div class="flights-hero-stat">
+                    <strong>24/7</strong>
+                    <span>Travel Support</span>
+                </div>
+
+                <div class="flights-hero-stat">
+                    <strong>Easy</strong>
+                    <span>Booking Experience</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FLIGHT SEARCH SECTION
+        ========================================== -->
+
+        <section class="flight-search-section" id="flight-search">
+
+            <div class="flight-search-container">
+
+                <div class="flight-search-heading">
+
+                    <span class="flight-section-label">
+                        PLAN YOUR JOURNEY
+                    </span>
+
+                    <h2>
+                        Where Would You Like
+                        <span>To Fly?</span>
+                    </h2>
+
+                    <p>
+                        Find your perfect route and get ready for your next adventure.
+                    </p>
+
+                </div>
+
+
+                <!-- Flight Search Card -->
+
+                <div class="flight-search-card">
+
+                    <div class="flight-search-top">
+
+                        <div class="flight-trip-options">
+
+                            <label class="flight-trip-option active">
+
+                                <input
+                                    type="radio"
+                                    name="tripType"
+                                    value="roundTrip"
+                                    checked>
+
+                                <span>Round Trip</span>
+
+                            </label>
+
+                            <label class="flight-trip-option">
+
+                                <input
+                                    type="radio"
+                                    name="tripType"
+                                    value="oneWay">
+
+                                <span>One Way</span>
+
+                            </label>
+
+                        </div>
+
+                        <span class="flight-search-badge">
+                            ✦ Explore the world
+                        </span>
+
+                    </div>
+
+
+                    <!-- Search Form -->
+
+                    <form id="flightSearchForm" class="flight-search-form">
+
+                        <!-- Departure -->
+
+                        <div class="flight-form-group">
+
+                            <label for="flightFrom">
+                                FROM
+                            </label>
+
+                            <div class="flight-input-wrapper">
+
+                                <span class="flight-input-icon">🛫</span>
+
+                                <input
+                                    type="text"
+                                    id="flightFrom"
+                                    name="flightFrom"
+                                    placeholder="Departure city"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Swap Button -->
+
+                        <button
+                            type="button"
+                            id="flightSwapButton"
+                            class="flight-swap-button"
+                            aria-label="Swap departure and destination">
+
+                            ⇄
+
+                        </button>
+
+
+                        <!-- Destination -->
+
+                        <div class="flight-form-group">
+
+                            <label for="flightTo">
+                                TO
+                            </label>
+
+                            <div class="flight-input-wrapper">
+
+                                <span class="flight-input-icon">🛬</span>
+
+                                <input
+                                    type="text"
+                                    id="flightTo"
+                                    name="flightTo"
+                                    placeholder="Destination city"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Departure Date -->
+
+                        <div class="flight-form-group">
+
+                            <label for="flightDeparture">
+                                DEPARTURE
+                            </label>
+
+                            <div class="flight-input-wrapper">
+
+                                <span class="flight-input-icon">🗓️</span>
+
+                                <input
+                                    type="date"
+                                    id="flightDeparture"
+                                    name="flightDeparture"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Return Date -->
+
+                        <div class="flight-form-group" id="flightReturnGroup">
+
+                            <label for="flightReturn">
+                                RETURN
+                            </label>
+
+                            <div class="flight-input-wrapper">
+
+                                <span class="flight-input-icon">🗓️</span>
+
+                                <input
+                                    type="date"
+                                    id="flightReturn"
+                                    name="flightReturn">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Travelers -->
+
+                        <div class="flight-form-group">
+
+                            <label for="flightTravelers">
+                                TRAVELERS
+                            </label>
+
+                            <div class="flight-input-wrapper">
+
+                                <span class="flight-input-icon">👤</span>
+
+                                <select
+                                    id="flightTravelers"
+                                    name="flightTravelers">
+
+                                    <option value="1">1 Traveler</option>
+                                    <option value="2" selected>2 Travelers</option>
+                                    <option value="3">3 Travelers</option>
+                                    <option value="4">4 Travelers</option>
+                                    <option value="5">5 Travelers</option>
+                                    <option value="6">6 Travelers</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Search Button -->
+
+                        <button
+                            type="submit"
+                            class="flight-search-btn">
+
+                            <span>Search Flights</span>
+
+                            <span class="flight-search-btn-icon">→</span>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Search Message -->
+
+                    <div
+                        class="flight-search-message"
+                        id="flightSearchMessage"
+                        aria-live="polite">
+                    </div>
+
+
+                    <!-- =========================================
+                         FLIGHT SEARCH RESULTS
+                    ========================================== -->
+
+                    <div
+                        id="flightResults"
+                        class="flight-results"
+                        aria-live="polite">
+                    </div>
+
+
+                    <!-- =========================================
+                         FLIGHT BOOKING SUCCESS ANIMATION
+                    ========================================== -->
+
+                    <div
+                        id="flightBookingAnimation"
+                        class="flight-booking-animation"
+                        aria-live="polite"
+                        aria-hidden="true">
+
+                        <div class="flight-animation-sky">
+
+                            <span class="flight-animation-cloud cloud-one">
+                                ☁
+                            </span>
+
+                            <span class="flight-animation-cloud cloud-two">
+                                ☁
+                            </span>
+
+                            <span class="flight-animation-cloud cloud-three">
+                                ☁
+                            </span>
+
+                            <div class="flight-animation-plane">
+                                ✈️
+                            </div>
+
+                        </div>
+
+                        <div class="flight-booking-success-content">
+
+                            <div class="flight-success-icon">
+                                ✓
+                            </div>
+
+                            <span class="flight-success-label">
+                                BOOKING CONFIRMED
+                            </span>
+
+                            <h2>
+                                Flight Booked
+                                <span>Successfully!</span>
+                            </h2>
+
+                            <p>
+                                Your next adventure is ready for takeoff.
+                                Get ready to explore the world with STACKLY Travel.
+                            </p>
+
+                            <a
+                                href="bookings.html"
+                                class="flight-confirmation-btn">
+
+                                View My Bookings →
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             POPULAR FLIGHT ROUTES
+        ========================================== -->
+
+        <section class="flight-routes-section">
+
+            <div class="flight-routes-container">
+
+                <div class="flight-routes-heading">
+
+                    <div>
+
+                        <span class="flight-section-label">
+                            TOP FLIGHT DESTINATIONS
+                        </span>
+
+                        <h2>
+                            Popular
+                            <span>Flight Routes</span>
+                        </h2>
+
+                        <p>
+                            Explore some of the world's most loved travel routes.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="destinations.html"
+                        class="flight-routes-explore-btn">
+
+                        Explore Destinations
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Flight Route Cards -->
+
+                <div class="flight-routes-grid">
+
+
+                    <!-- Paris -->
+
+                    <article class="flight-route-card">
+
+                        <div class="flight-route-image">
+
+                            <img
+                                src="assets/flights/paris.webp"
+                                alt="Paris city and Eiffel Tower">
+
+                            <span class="flight-route-badge">
+                                Popular
+                            </span>
+
+                            <div class="flight-route-image-content">
+
+                                <span>FRANCE</span>
+
+                                <h3>Paris</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flight-route-card-content">
+
+                            <div class="flight-route-airports">
+
+                                <div>
+
+                                    <strong>DEL</strong>
+
+                                    <span>New Delhi</span>
+
+                                </div>
+
+                                <div class="flight-route-line">
+                                    ✈
+                                </div>
+
+                                <div>
+
+                                    <strong>PAR</strong>
+
+                                    <span>Paris</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flight-route-footer">
+
+                                <div>
+
+                                    <strong>Approx. 9 hrs</strong>
+
+                                    <span>International</span>
+
+                                </div>
+
+                                <a
+                                    href="#flight-search"
+                                    class="flight-route-btn"
+                                    data-flight-destination="Paris">
+
+                                    Explore
+                                    <span>→</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Dubai -->
+
+                    <article class="flight-route-card">
+
+                        <div class="flight-route-image">
+
+                            <img
+                                src="assets/flights/dubai.webp"
+                                alt="Dubai skyline">
+
+                            <span class="flight-route-badge">
+                                Trending
+                            </span>
+
+                            <div class="flight-route-image-content">
+
+                                <span>UNITED ARAB EMIRATES</span>
+
+                                <h3>Dubai</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flight-route-card-content">
+
+                            <div class="flight-route-airports">
+
+                                <div>
+
+                                    <strong>BOM</strong>
+
+                                    <span>Mumbai</span>
+
+                                </div>
+
+                                <div class="flight-route-line">
+                                    ✈
+                                </div>
+
+                                <div>
+
+                                    <strong>DXB</strong>
+
+                                    <span>Dubai</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flight-route-footer">
+
+                                <div>
+
+                                    <strong>Approx. 3 hrs</strong>
+
+                                    <span>International</span>
+
+                                </div>
+
+                                <a
+                                    href="#flight-search"
+                                    class="flight-route-btn"
+                                    data-flight-destination="Dubai">
+
+                                    Explore
+                                    <span>→</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Singapore -->
+
+                    <article class="flight-route-card">
+
+                        <div class="flight-route-image">
+
+                            <img
+                                src="assets/flights/singapore.webp"
+                                alt="Singapore skyline">
+
+                            <span class="flight-route-badge">
+                                Best Experience
+                            </span>
+
+                            <div class="flight-route-image-content">
+
+                                <span>SINGAPORE</span>
+
+                                <h3>Singapore</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flight-route-card-content">
+
+                            <div class="flight-route-airports">
+
+                                <div>
+
+                                    <strong>MAA</strong>
+
+                                    <span>Chennai</span>
+
+                                </div>
+
+                                <div class="flight-route-line">
+                                    ✈
+                                </div>
+
+                                <div>
+
+                                    <strong>SIN</strong>
+
+                                    <span>Singapore</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flight-route-footer">
+
+                                <div>
+
+                                    <strong>Approx. 4 hrs</strong>
+
+                                    <span>International</span>
+
+                                </div>
+
+                                <a
+                                    href="#flight-search"
+                                    class="flight-route-btn"
+                                    data-flight-destination="Singapore">
+
+                                    Explore
+                                    <span>→</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Maldives -->
+
+                    <article class="flight-route-card">
+
+                        <div class="flight-route-image">
+
+                            <img
+                                src="assets/flights/maldives.webp"
+                                alt="Maldives tropical island">
+
+                            <span class="flight-route-badge">
+                                Island Escape
+                            </span>
+
+                            <div class="flight-route-image-content">
+
+                                <span>MALDIVES</span>
+
+                                <h3>Malé</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flight-route-card-content">
+
+                            <div class="flight-route-airports">
+
+                                <div>
+
+                                    <strong>BLR</strong>
+
+                                    <span>Bengaluru</span>
+
+                                </div>
+
+                                <div class="flight-route-line">
+                                    ✈
+                                </div>
+
+                                <div>
+
+                                    <strong>MLE</strong>
+
+                                    <span>Malé</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flight-route-footer">
+
+                                <div>
+
+                                    <strong>Approx. 2 hrs</strong>
+
+                                    <span>International</span>
+
+                                </div>
+
+                                <a
+                                    href="#flight-search"
+                                    class="flight-route-btn"
+                                    data-flight-destination="Maldives">
+
+                                    Explore
+                                    <span>→</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FLIGHT BENEFITS SECTION
+        ========================================== -->
+
+        <section class="flight-benefits-section">
+
+            <div class="flight-benefits-container">
+
+                <div class="flight-benefits-heading">
+
+                    <span class="flight-section-label">
+                        TRAVEL WITH CONFIDENCE
+                    </span>
+
+                    <h2>
+                        More Than Just
+                        <span>A Flight</span>
+                    </h2>
+
+                    <p>
+                        We make your travel planning smoother, simpler, and more
+                        enjoyable from beginning to end.
+                    </p>
+
+                </div>
+
+
+                <div class="flight-benefits-grid">
+
+
+                    <!-- Benefit 1 -->
+
+                    <div class="flight-benefit-card">
+
+                        <div class="flight-benefit-icon">
+                            🌍
+                        </div>
+
+                        <h3>Explore the World</h3>
+
+                        <p>
+                            Discover exciting destinations and create
+                            unforgettable travel memories.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Benefit 2 -->
+
+                    <div class="flight-benefit-card">
+
+                        <div class="flight-benefit-icon">
+                            💎
+                        </div>
+
+                        <h3>Simple Booking</h3>
+
+                        <p>
+                            Enjoy a smooth and convenient booking experience
+                            to make planning effortless.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Benefit 3 -->
+
+                    <div class="flight-benefit-card">
+
+                        <div class="flight-benefit-icon">
+                            🛡️
+                        </div>
+
+                        <h3>Travel With Confidence</h3>
+
+                        <p>
+                            Plan your journeys with helpful travel information
+                            and dependable support.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Benefit 4 -->
+
+                    <div class="flight-benefit-card">
+
+                        <div class="flight-benefit-icon">
+                            🎧
+                        </div>
+
+                        <h3>Dedicated Support</h3>
+
+                        <p>
+                            Our travel support team is here to help make
+                            your journey comfortable.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FLIGHT EXPERIENCE BANNER
+        ========================================== -->
+
+        <section class="flight-experience-section">
+
+            <div class="flight-experience-overlay"></div>
+
+            <div class="flight-experience-content">
+
+                <span class="flight-section-label">
+                    YOUR NEXT ADVENTURE AWAITS
+                </span>
+
+                <h2>
+                    The World Is Waiting.
+                    <span>Let's Fly.</span>
+                </h2>
+
+                <p>
+                    Turn your travel dreams into unforgettable memories.
+                    Your next destination is just the beginning.
+                </p>
+
+                <a href="#flight-search" class="flight-experience-btn">
+                    Start Your Journey
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         COMMON FOOTER
+    ========================================== -->
+
+    <div id="site-footer"></div>
+
+
+    <!-- =========================================
+         COMMON JS
+    ========================================== -->
+
+    <script src="common.js"></script>
+
+    <!-- Flights JS -->
+    <script src="flights.js"></script>
+
+</body>
+
+</html>

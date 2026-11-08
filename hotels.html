@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Hotels | STACKLY Travel</title>
+
+    <meta name="description"
+        content="Discover exceptional hotels, luxury resorts and comfortable stays around the world with STACKLY Travel.">
+
+    <meta name="theme-color" content="#101d3a">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="common.css">
+
+    <!-- Hotels CSS -->
+    <link rel="stylesheet" href="hotels.css">
+
+</head>
+
+<body>
+
+    <!-- COMMON PRELOADER -->
+    <div id="preloader"></div>
+
+    <!-- COMMON HEADER -->
+    <div id="site-header"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="hotels-page">
+
+
+        <!-- =========================================
+             HOTEL HERO
+        ========================================== -->
+
+        <section class="hotels-hero">
+
+            <div class="hotels-hero-overlay"></div>
+
+            <div class="hotels-hero-content stackly-reveal">
+
+                <span class="hotels-eyebrow">
+                    <span class="hotels-eyebrow-line"></span>
+                    STAYS THAT MAKE EVERY JOURNEY SPECIAL
+                </span>
+
+                <h1>
+                    Find Your Perfect
+                    <span>Place to Stay.</span>
+                </h1>
+
+                <p>
+                    From luxurious beachfront resorts to cozy city escapes,
+                    discover stays that turn every trip into an unforgettable
+                    experience.
+                </p>
+
+                <div class="hotels-hero-actions">
+
+                    <a href="#hotel-search"
+                        class="hotels-primary-btn">
+
+                        Find Your Stay
+                        <span>↗</span>
+
+                    </a>
+
+                    <a href="#featured-hotels"
+                        class="hotels-secondary-btn">
+
+                        Explore Hotels
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotels-hero-bottom">
+
+                <span>
+                    Comfort, luxury and unforgettable experiences
+                </span>
+
+                <a href="#hotel-search"
+                    aria-label="Scroll to hotel search">
+
+                    ↓
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HOTEL SEARCH SECTION
+        ========================================== -->
+
+        <section class="hotel-search-section"
+            id="hotel-search">
+
+            <div class="hotel-search-container stackly-reveal">
+
+                <div class="hotel-search-heading">
+
+                    <span class="section-eyebrow">
+                        YOUR NEXT STAY STARTS HERE
+                    </span>
+
+                    <h2>
+                        Search for your
+                        <span>perfect stay.</span>
+                    </h2>
+
+                    <p>
+                        Find hotels that match your destination,
+                        travel dates and preferences.
+                    </p>
+
+                </div>
+
+
+                <form class="hotel-search-form"
+                    id="hotelSearchForm">
+
+                    <!-- Destination -->
+
+                    <div class="hotel-search-field">
+
+                        <label for="hotelDestination">
+                            Destination
+                        </label>
+
+                        <div class="hotel-field-control">
+
+                            <span class="hotel-field-icon">
+                                📍
+                            </span>
+
+                            <input
+                                type="text"
+                                id="hotelDestination"
+                                name="destination"
+                                placeholder="Where are you going?"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Check-in -->
+
+                    <div class="hotel-search-field">
+
+                        <label for="hotelCheckin">
+                            Check-in
+                        </label>
+
+                        <div class="hotel-field-control">
+
+                            <span class="hotel-field-icon">
+                                📅
+                            </span>
+
+                            <input
+                                type="date"
+                                id="hotelCheckin"
+                                name="checkin"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Check-out -->
+
+                    <div class="hotel-search-field">
+
+                        <label for="hotelCheckout">
+                            Check-out
+                        </label>
+
+                        <div class="hotel-field-control">
+
+                            <span class="hotel-field-icon">
+                                📅
+                            </span>
+
+                            <input
+                                type="date"
+                                id="hotelCheckout"
+                                name="checkout"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Guests -->
+
+                    <div class="hotel-search-field">
+
+                        <label for="hotelGuests">
+                            Guests
+                        </label>
+
+                        <div class="hotel-field-control">
+
+                            <span class="hotel-field-icon">
+                                👥
+                            </span>
+
+                            <select
+                                id="hotelGuests"
+                                name="guests">
+
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6+ Guests</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Search Button -->
+
+                    <button type="submit"
+                        class="hotel-search-submit">
+
+                        <span>Search Hotels</span>
+                        <span>↗</span>
+
+                    </button>
+
+                </form>
+
+
+                <div class="hotel-search-message"
+                    id="hotelSearchMessage"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HOTEL INTRO
+        ========================================== -->
+
+        <section class="hotel-intro section-padding">
+
+            <div class="hotel-intro-container">
+
+                <div class="hotel-intro-content stackly-reveal">
+
+                    <span class="section-eyebrow">
+                        STAY SOMEWHERE EXTRAORDINARY
+                    </span>
+
+                    <h2>
+                        More than a hotel.
+                        <span>A travel experience.</span>
+                    </h2>
+
+                    <p>
+                        The right stay makes every journey better.
+                        Discover carefully selected accommodations
+                        that bring comfort, style and unforgettable
+                        moments to your travels.
+                    </p>
+
+                    <a href="#featured-hotels"
+                        class="hotel-text-link">
+
+                        Explore Our Collection
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="hotel-intro-image stackly-reveal">
+
+                    <img
+                        src="assets/hotels/hotel intro.webp"
+                        alt="Luxury hotel surrounded by beautiful nature"
+                        loading="lazy">
+
+                    <div class="hotel-intro-floating-card">
+
+                        <span class="hotel-intro-floating-icon">
+                            ✦
+                        </span>
+
+                        <div>
+
+                            <strong>Exceptional Stays</strong>
+
+                            <span>
+                                Curated for your comfort
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- =========================================
+             FEATURED HOTELS
+        ========================================== -->
+
+        <section class="featured-hotels-section section-padding"
+            id="featured-hotels">
+
+            <div class="hotels-section-container">
+
+                <div class="hotels-section-heading stackly-reveal">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            HANDPICKED FOR YOU
+                        </span>
+
+                        <h2>
+                            Featured
+                            <span>Hotels & Resorts</span>
+                        </h2>
+
+                        <p>
+                            Discover exceptional stays in some of
+                            the world's most beautiful destinations.
+                        </p>
+                    </div>
+
+                    <a href="#hotel-search"
+                        class="hotel-view-all-link">
+
+                        Find Your Stay
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- HOTEL FILTERS -->
+
+                <div class="hotel-filter-buttons stackly-reveal">
+
+                    <button class="hotel-filter-btn active"
+                        data-filter="all">
+
+                        All Stays
+
+                    </button>
+
+                    <button class="hotel-filter-btn"
+                        data-filter="luxury">
+
+                        ✦ Luxury
+
+                    </button>
+
+                    <button class="hotel-filter-btn"
+                        data-filter="beach">
+
+                        🌴 Beach Resorts
+
+                    </button>
+
+                    <button class="hotel-filter-btn"
+                        data-filter="city">
+
+                        🏙️ City Hotels
+
+                    </button>
+
+                    <button class="hotel-filter-btn"
+                        data-filter="nature">
+
+                        🌿 Nature Retreats
+
+                    </button>
+
+                </div>
+
+
+                <!-- HOTEL GRID -->
+
+                <div class="featured-hotels-grid">
+
+
+                    <!-- HOTEL 1 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="luxury beach">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/flights/maldives.webp"
+                                data-hover-image="assets/hotels/maldives hover img.webp"
+                                alt="Luxury Maldives resort"
+                                loading="lazy">
+
+                            <span class="hotel-card-badge">
+                                TOP PICK
+                            </span>
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Maldives hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Maldives
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    LUXURY BEACH RESORT
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.9
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Ocean Pearl Resort
+                            </h3>
+
+                            <p>
+                                Private villas, turquoise waters
+                                and unforgettable island luxury.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🏝️ Private Beach</span>
+                                <span>🍽️ Fine Dining</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $320
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HOTEL 2 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="luxury nature">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/flights/singapore.webp"
+                                data-hover-image="assets/hotels/switserland hover.webp"
+                                alt="Swiss mountain luxury hotel"
+                                loading="lazy">
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Swiss hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Switzerland
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    MOUNTAIN RETREAT
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.8
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Alpine Grand Lodge
+                            </h3>
+
+                            <p>
+                                Experience peaceful mountain views
+                                and elegant alpine comfort.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🏔️ Mountain View</span>
+                                <span>🔥 Fireplace</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $245
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HOTEL 3 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="luxury city">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/flights/dubai.webp"
+                                data-hover-image="assets/hotels/dubai hover img.webp"
+                                alt="Luxury Dubai hotel"
+                                loading="lazy">
+
+                            <span class="hotel-card-badge">
+                                PREMIUM
+                            </span>
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Dubai hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Dubai
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    CITY LUXURY HOTEL
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.9
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Skyline Royal Suites
+                            </h3>
+
+                            <p>
+                                Modern luxury with spectacular
+                                skyline and city views.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🌆 City View</span>
+                                <span>🏊 Infinity Pool</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $280
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HOTEL 4 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="beach luxury">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/booking/booking-bali.webp"
+                                data-hover-image="assets/hotels/bali hover.webp"
+                                alt="Bali tropical hotel"
+                                loading="lazy">
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Bali hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Bali, Indonesia
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    TROPICAL RESORT
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.7
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Bali Serenity Villas
+                            </h3>
+
+                            <p>
+                                Relax in tropical surroundings
+                                with private pool villas.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🌴 Tropical Garden</span>
+                                <span>💆 Spa</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $190
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HOTEL 5 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="city luxury">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/booking/paris,france.webp"
+                                data-hover-image="assets/hotels/paris hover.webp"
+                                alt="Paris boutique hotel"
+                                loading="lazy">
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Paris hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Paris, France
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    BOUTIQUE HOTEL
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.8
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Maison de Paris
+                            </h3>
+
+                            <p>
+                                A charming boutique stay in
+                                the heart of romantic Paris.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🗼 City Center</span>
+                                <span>☕ Café</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $210
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HOTEL 6 -->
+
+                    <article class="hotel-card stackly-reveal"
+                        data-category="nature">
+
+                        <div class="hotel-card-image">
+
+                            <img
+                                src="assets/hotels/hotel manali.webp"
+                                data-hover-image="assets/hotels/manali hover.webp"
+                                alt="Manali mountain resort"
+                                loading="lazy">
+
+                            <span class="hotel-card-badge">
+                                NATURE ESCAPE
+                            </span>
+
+                            <button class="hotel-favorite-btn"
+                                type="button"
+                                aria-label="Add Manali hotel to favorites">
+
+                                ♡
+
+                            </button>
+
+                            <span class="hotel-image-location">
+                                📍 Manali, India
+                            </span>
+
+                        </div>
+
+
+                        <div class="hotel-card-content">
+
+                            <div class="hotel-card-top">
+
+                                <span class="hotel-card-type">
+                                    MOUNTAIN RESORT
+                                </span>
+
+                                <span class="hotel-rating">
+                                    ★ 4.8
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Himalayan Haven
+                            </h3>
+
+                            <p>
+                                A peaceful mountain escape
+                                surrounded by beautiful nature.
+                            </p>
+
+                            <div class="hotel-card-features">
+
+                                <span>🌲 Nature View</span>
+                                <span>🔥 Cozy Rooms</span>
+
+                            </div>
+
+                            <div class="hotel-card-bottom">
+
+                                <div class="hotel-price">
+
+                                    <strong>
+                                        $95
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                                <a href="contact.html"
+                                    class="hotel-card-btn">
+
+                                    Explore Stay
+                                    <span>↗</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HOTEL EXPERIENCE SECTION
+        ========================================== -->
+
+        <section class="hotel-experience-section">
+
+            <div class="hotel-experience-overlay"></div>
+
+            <div class="hotel-experience-content stackly-reveal">
+
+                <span class="section-eyebrow">
+                    YOUR JOURNEY. YOUR COMFORT.
+                </span>
+
+                <h2>
+                    Make every stay
+                    <span>feel extraordinary.</span>
+                </h2>
+
+                <p>
+                    Discover places that inspire you to travel
+                    further, stay longer and create memories
+                    that last a lifetime.
+                </p>
+
+                <a href="contact.html"
+                    class="hotel-experience-btn">
+
+                    Plan Your Stay
+                    <span>↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             WHY CHOOSE STACKLY
+        ========================================== -->
+
+        <section class="hotel-benefits-section section-padding">
+
+            <div class="hotels-section-container">
+
+                <div class="hotel-benefits-heading stackly-reveal">
+
+                    <span class="section-eyebrow">
+                        THE STACKLY DIFFERENCE
+                    </span>
+
+                    <h2>
+                        Stay better.
+                        <span>Travel happier.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="hotel-benefits-grid">
+
+                    <article class="hotel-benefit-card stackly-reveal">
+
+                        <div class="hotel-benefit-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Carefully Selected
+                        </h3>
+
+                        <p>
+                            Discover stays chosen for their
+                            comfort, quality and experience.
+                        </p>
+
+                    </article>
+
+
+                    <article class="hotel-benefit-card stackly-reveal">
+
+                        <div class="hotel-benefit-icon">
+                            🛎️
+                        </div>
+
+                        <h3>
+                            Exceptional Comfort
+                        </h3>
+
+                        <p>
+                            Find accommodations that make
+                            every moment of your trip special.
+                        </p>
+
+                    </article>
+
+
+                    <article class="hotel-benefit-card stackly-reveal">
+
+                        <div class="hotel-benefit-icon">
+                            🌍
+                        </div>
+
+                        <h3>
+                            Global Destinations
+                        </h3>
+
+                        <p>
+                            Explore wonderful stays across
+                            iconic cities and hidden escapes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="hotel-benefit-card stackly-reveal">
+
+                        <div class="hotel-benefit-icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Travel Support
+                        </h3>
+
+                        <p>
+                            Get help planning your next
+                            memorable travel experience.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FINAL CTA
+        ========================================== -->
+
+        <section class="hotel-final-cta">
+
+            <div class="hotel-final-cta-content stackly-reveal">
+
+                <span class="section-eyebrow">
+                    YOUR NEXT ADVENTURE IS CALLING
+                </span>
+
+                <h2>
+                    Ready to find your
+                    <span>home away from home?</span>
+                </h2>
+
+                <p>
+                    Let STACKLY Travel help you discover
+                    your perfect stay.
+                </p>
+
+                <a href="contact.html"
+                    class="hotel-final-cta-btn">
+
+                    Get in Touch
+                    <span>↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- COMMON FOOTER -->
+
+    <div id="site-footer"></div>
+
+
+    <!-- COMMON JAVASCRIPT -->
+
+    <script src="common.js"></script>
+
+    <!-- Hotels JS -->
+
+    <script src="hotels.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1496 @@
+/* =========================================================
+   STACKLY TRAVEL — COMMON CSS
+   Shared Header | Footer | Preloader | Animations
+========================================================= */
+
+
+/* =========================================================
+   1. GOOGLE FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   2. GLOBAL VARIABLES
+========================================================= */
+
+:root {
+    --stackly-primary: #101d3a;
+    --stackly-secondary: #164e63;
+    --stackly-accent: #00bfa6;
+    --stackly-text: #1e293b;
+    --stackly-muted: #64748b;
+    --stackly-white: #ffffff;
+    --stackly-light: #f8fafc;
+    --stackly-radius: 16px;
+    --stackly-shadow: 0 10px 35px rgba(16, 29, 58, 0.08);
+    --stackly-transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   3. GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--stackly-text);
+    background: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
+}
+
+body.preloader-active {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+main,
+section,
+header,
+footer {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   4. COMMON BACKGROUND
+========================================================= */
+
+.stackly-page-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 191, 166, 0.05),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(22, 78, 99, 0.05),
+            transparent 35%
+        );
+}
+
+
+/* =========================================================
+   5. COMMON HEADER
+========================================================= */
+
+.site-header,
+#stacklyHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(16, 29, 58, 0.08);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        padding 0.3s ease;
+}
+
+.site-header.scrolled,
+#stacklyHeader.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 5px 25px rgba(16, 29, 58, 0.08);
+}
+
+.header-container {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* =========================================================
+   6. HEADER LOGO
+========================================================= */
+
+.header-logo,
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo img,
+.site-logo img {
+    width: auto;
+    max-width: 190px;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+.header-logo span,
+.site-logo span {
+    font-family: "Manrope", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--stackly-primary);
+    letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   7. HEADER NAVIGATION
+========================================================= */
+
+.header-navigation,
+#headerNavigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-navigation a,
+#headerNavigation a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 12px 0;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.header-navigation a:hover,
+#headerNavigation a:hover {
+    color: var(--stackly-accent);
+}
+
+
+/* Active navigation underline */
+
+.header-navigation a::after,
+#headerNavigation a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+    background: var(--stackly-accent);
+
+    transition: width 0.3s ease;
+}
+
+.header-navigation a:hover::after,
+.header-navigation a.active::after,
+#headerNavigation a:hover::after,
+#headerNavigation a.active::after {
+    width: 100%;
+}
+
+.header-navigation a.active,
+#headerNavigation a.active {
+    color: var(--stackly-primary);
+}
+
+
+/* =========================================================
+   8. HEADER BUTTONS
+========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Explore Now button */
+
+.header-actions a,
+.header-button,
+.header-cta,
+.signup-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    border: 1px solid var(--stackly-primary);
+    border-radius: 12px;
+
+    background: var(--stackly-primary);
+    color: #ffffff !important;
+
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.header-actions a:hover,
+.header-button:hover,
+.header-cta:hover,
+.signup-button:hover {
+    background: var(--stackly-accent);
+    border-color: var(--stackly-accent);
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 191, 166, 0.2);
+}
+
+
+/* =========================================================
+   9. MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle,
+#menuToggle {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(16, 29, 58, 0.12);
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: var(--stackly-primary);
+
+    font-size: 25px;
+    line-height: 1;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.menu-toggle:hover,
+#menuToggle:hover {
+    background: var(--stackly-primary);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE HEADER — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .header-container {
+        width: calc(100% - 36px);
+        gap: 20px;
+    }
+
+    .header-navigation,
+    #headerNavigation {
+        gap: 20px;
+    }
+
+    .header-navigation a,
+    #headerNavigation a {
+        font-size: 13px;
+    }
+
+    .header-logo img,
+    .site-logo img {
+        max-width: 160px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .header-actions a,
+    .header-button,
+    .header-cta,
+    .signup-button {
+        padding: 10px 17px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE HEADER — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-container {
+        min-height: 72px;
+        width: calc(100% - 30px);
+        gap: 12px;
+    }
+
+    .header-logo img,
+    .site-logo img {
+        max-width: 145px;
+        max-height: 45px;
+    }
+
+    .header-logo span,
+    .site-logo span {
+        font-size: 22px;
+    }
+
+    .menu-toggle,
+    #menuToggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .header-navigation,
+    #headerNavigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 20px 22px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid rgba(16, 29, 58, 0.08);
+        box-shadow: 0 15px 25px rgba(16, 29, 58, 0.08);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .header-navigation.mobile-open,
+    #headerNavigation.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .header-navigation a,
+    #headerNavigation a {
+        display: flex;
+        width: 100%;
+
+        padding: 14px 8px;
+        font-size: 15px;
+
+        border-bottom: 1px solid rgba(16, 29, 58, 0.05);
+    }
+
+    .header-navigation a::after,
+    #headerNavigation a::after {
+        bottom: 5px;
+        left: 8px;
+        max-width: 45px;
+    }
+
+    .header-navigation a.active::after,
+    #headerNavigation a.active::after {
+        width: 30px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .header-actions a,
+    .header-button,
+    .header-cta,
+    .signup-button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   12. SMALL MOBILE HEADER
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-container {
+        width: calc(100% - 24px);
+        min-height: 66px;
+    }
+
+    .header-logo img,
+    .site-logo img {
+        max-width: 125px;
+        max-height: 40px;
+    }
+
+    .header-logo span,
+    .site-logo span {
+        font-size: 20px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .header-actions a,
+    .header-button,
+    .header-cta,
+    .signup-button {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .menu-toggle,
+    #menuToggle {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   13. COMMON BUTTONS
+========================================================= */
+
+.stackly-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    border: 0;
+    border-radius: 50px;
+
+    background: var(--stackly-primary);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stackly-btn:hover {
+    background: var(--stackly-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(16, 29, 58, 0.15);
+}
+
+.stackly-btn-secondary {
+    background: var(--stackly-accent);
+    color: #ffffff;
+}
+
+.stackly-btn-secondary:hover {
+    background: #009f8b;
+}
+
+.stackly-btn-outline {
+    background: transparent;
+    color: var(--stackly-primary);
+    border: 2px solid var(--stackly-primary);
+}
+
+.stackly-btn-outline:hover {
+    background: var(--stackly-primary);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   14. BUTTON RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stackly-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   15. COMMON FOOTER
+========================================================= */
+
+.site-footer,
+#stacklyFooter {
+    position: relative;
+    width: 100%;
+
+    background: var(--stackly-primary);
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+.footer-main {
+    width: min(1200px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding: 65px 0 45px;
+}
+
+.footer-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 45px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   16. FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    min-width: 0;
+}
+
+.footer-brand img {
+    max-width: 240px;
+    max-height: 65px;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+.footer-brand-name {
+    font-family: "Manrope", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.footer-description {
+    max-width: 320px;
+
+    margin-top: 0;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   17. FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    min-width: 0;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 5px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-column a {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+    max-width: 100%;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--stackly-accent);
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   18. FOOTER SOCIAL LINKS
+========================================================= */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--stackly-accent);
+    border-color: var(--stackly-accent);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   19. FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    width: min(1200px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding: 22px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--stackly-accent);
+}
+
+
+/* =========================================================
+   20. FOOTER RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-main,
+    .footer-bottom {
+        width: calc(100% - 50px);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+
+    .footer-main {
+        padding: 55px 0 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .footer-main,
+    .footer-bottom {
+        width: calc(100% - 36px);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+}
+
+
+/* =========================================================
+   21. SCROLL REVEAL
+========================================================= */
+
+.stackly-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    will-change: opacity, transform;
+}
+
+.stackly-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stackly-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.stackly-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.stackly-reveal-left.revealed,
+.stackly-reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.stackly-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.stackly-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.stackly-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.stackly-delay-4 {
+    transition-delay: 0.4s;
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--stackly-accent);
+    outline-offset: 4px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   23. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .stackly-reveal,
+    .stackly-reveal-left,
+    .stackly-reveal-right {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================================================
+   24. STACKLY FLIGHT PRELOADER
+========================================================= */
+
+.flight-preloader,
+#stacklyPreloader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #193a65 0%,
+            #101d3a 45%,
+            #07101f 100%
+        );
+
+    color: #ffffff;
+    z-index: 99999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.flight-preloader.preloader-hidden,
+#stacklyPreloader.preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   25. PRELOADER BACKGROUND STARS
+========================================================= */
+
+.flight-preloader-stars {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffff 70%, transparent),
+        radial-gradient(1px 1px at 25% 80%, #ffffff 70%, transparent),
+        radial-gradient(2px 2px at 70% 25%, #ffffff 70%, transparent),
+        radial-gradient(1px 1px at 85% 70%, #ffffff 70%, transparent),
+        radial-gradient(2px 2px at 45% 15%, #ffffff 70%, transparent),
+        radial-gradient(1px 1px at 60% 90%, #ffffff 70%, transparent),
+        radial-gradient(1px 1px at 90% 40%, #ffffff 70%, transparent);
+
+    opacity: 0.65;
+
+    animation: flightStarsTwinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes flightStarsTwinkle {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   26. PRELOADER CONTENT
+========================================================= */
+
+.flight-preloader-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(500px, calc(100% - 35px));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* Brand */
+
+.flight-preloader-brand {
+    margin-bottom: 30px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    color: #ffffff;
+}
+
+.flight-preloader-brand span {
+    color: #00d4b5;
+}
+
+
+/* Loading title */
+
+.flight-preloader-title {
+    margin-top: 25px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+
+    color: #ffffff;
+}
+
+.flight-preloader-subtitle {
+    margin-top: 10px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   27. REMOVE EARTH AND LARGE AIRPLANE
+========================================================= */
+
+.flight-earth-scene,
+.flight-earth,
+.flight-earth-map,
+.flight-earth-shine,
+.flight-earth-orbit,
+.flight-orbit-plane {
+    display: none !important;
+}
+
+
+/* =========================================================
+   28. LOADING PROGRESS AREA
+========================================================= */
+
+.flight-preloader-progress {
+    width: min(430px, 90%);
+
+    margin-top: 38px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Percentage */
+
+.flight-preloader-percentage {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #ffffff;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   29. PROGRESS TRACK / BOX
+========================================================= */
+
+.flight-progress-track {
+    position: relative;
+
+    width: 100%;
+    height: 16px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 181, 0.15),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Progress fill */
+
+.flight-progress-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00bfa6,
+            #50e3c2,
+            #9cfbe5
+        );
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 181, 0.55);
+
+    transition: width 0.08s linear;
+}
+
+
+/* =========================================================
+   30. BIG PROGRESS AIRPLANE
+========================================================= */
+
+.flight-progress-plane {
+    position: absolute;
+
+    top: 50%;
+    left: 0%;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    transition: left 0.1s linear;
+
+    color: #ffffff;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0, 212, 181, 0.9));
+}
+
+.flight-progress-plane svg {
+    width: 62px;
+    height: 62px;
+
+    overflow: visible;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   31. PRELOADER RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .flight-preloader-content {
+        width: calc(100% - 30px);
+    }
+
+    .flight-preloader-brand {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .flight-preloader-title {
+        font-size: 18px;
+        margin-top: 22px;
+    }
+
+    .flight-preloader-subtitle {
+        font-size: 12px;
+    }
+
+    .flight-preloader-progress {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    .flight-preloader-percentage {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .flight-progress-track {
+        height: 12px;
+    }
+
+    .flight-progress-plane {
+        width: 52px;
+        height: 52px;
+    }
+
+    .flight-progress-plane svg {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   32. SMALL MOBILE PRELOADER
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .flight-preloader-brand {
+        font-size: 21px;
+    }
+
+    .flight-preloader-title {
+        font-size: 16px;
+    }
+
+    .flight-preloader-progress {
+        width: 88%;
+    }
+
+    .flight-progress-plane {
+        width: 46px;
+        height: 46px;
+    }
+
+    .flight-progress-plane svg {
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   33. PRELOADER ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .flight-preloader-stars {
+        animation: none !important;
+    }
+
+}
+
+/* =========================================================
+   STACKLY TRAVEL — FIX HEADER CTA + FOOTER
+   Correct selectors based on common.js
+========================================================= */
+
+/* EXPLORE NOW BUTTON */
+
+.site-header .header-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 26px;
+
+    background: #101d3a;
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border: 1px solid #101d3a;
+    border-radius: 10px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-header .header-action:hover {
+    background: #ffffff;
+    color: #101d3a;
+
+    transform: translateY(-2px);
+}
+
+
+/* FOOTER CONTAINER */
+
+.site-footer .footer-container {
+    width: min(1200px, calc(100% - 80px));
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* FOOTER GRID */
+
+.site-footer .footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* FOOTER LOGO */
+
+.site-footer .footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.site-footer .footer-logo img {
+    display: block;
+
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+
+/* FOOTER DESCRIPTION */
+
+.site-footer .footer-description {
+    max-width: 320px;
+
+    line-height: 1.8;
+}
+
+
+/* FOOTER COLUMNS */
+
+.site-footer .footer-column {
+    min-width: 0;
+}
+
+
+/* FOOTER BOTTOM */
+
+.site-footer .footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    margin-top: 45px;
+    padding-top: 25px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 992px) {
+
+    .site-footer .footer-container {
+        width: calc(100% - 50px);
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .site-header .header-action {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .site-footer .footer-container {
+        width: calc(100% - 36px);
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+
+        text-align: left;
+    }
+
+}

@@ -1,0 +1,2115 @@
+/* =========================================================
+   STACKLY TRAVEL — HOMEPAGE STYLES
+   Premium Travel Website
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+    --travel-primary: #101d3a;
+    --travel-secondary: #23466b;
+    --travel-accent: #e99a62;
+    --travel-accent-dark: #d77c40;
+
+    --travel-text: #17233b;
+    --travel-muted: #7b8494;
+
+    --travel-white: #ffffff;
+    --travel-light: #f7f8fb;
+    --travel-border: #e8ebf1;
+
+    --travel-radius: 22px;
+
+    --travel-transition: 0.35s ease;
+
+    --travel-shadow:
+        0 15px 45px rgba(16, 29, 58, 0.08);
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background: #ffffff;
+    color: var(--travel-text);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    position: relative;
+}
+
+::selection {
+    background: var(--travel-accent);
+    color: white;
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINER
+========================================================= */
+
+.section-container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+========================================================= */
+
+.home-hero {
+    position: relative;
+
+    min-height: 760px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+
+    background: var(--travel-primary);
+}
+
+
+/* Background */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.hero-background-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes heroZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+
+/* Overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 20, 39, 0.86) 0%,
+            rgba(8, 20, 39, 0.56) 45%,
+            rgba(8, 20, 39, 0.10) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* Hero Content */
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, 90%);
+
+    margin: 0 auto;
+
+    padding: 120px 0 100px;
+}
+
+
+.hero-content {
+    max-width: 690px;
+}
+
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #ffc79c;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-eyebrow i {
+    color: var(--travel-accent);
+}
+
+
+.hero-content h1 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(45px, 6vw, 82px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    margin: 0 0 25px;
+
+    letter-spacing: -2px;
+}
+
+
+.hero-content h1 span {
+    display: block;
+
+    color: var(--travel-accent);
+
+    font-style: italic;
+}
+
+
+.hero-content > p {
+    max-width: 530px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    margin-bottom: 35px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 17px 27px;
+
+    background: var(--travel-accent);
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: var(--travel-transition);
+}
+
+
+.hero-primary-button:hover {
+    background: var(--travel-accent-dark);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(233, 154, 98, 0.35);
+}
+
+
+.hero-primary-button i {
+    transition: transform 0.3s ease;
+}
+
+
+.hero-primary-button:hover i {
+    transform: translateX(5px);
+}
+
+
+.hero-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    color: white;
+
+    font-weight: 600;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(8px);
+
+    transition: var(--travel-transition);
+}
+
+
+.hero-secondary-button:hover {
+    background: white;
+    color: var(--travel-primary);
+}
+
+
+.hero-secondary-button i {
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--travel-primary);
+
+    font-size: 11px;
+}
+
+
+/* Hero Trust */
+
+.hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+
+.hero-trust-images {
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-trust-images img {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid white;
+
+    margin-left: -10px;
+}
+
+
+.hero-trust-images img:first-child {
+    margin-left: 0;
+}
+
+
+.hero-trust strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.hero-trust span {
+    display: block;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Floating Card */
+
+.hero-floating-card {
+    position: absolute;
+
+    right: 0;
+    bottom: 110px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px 25px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: var(--travel-primary);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15);
+
+    animation: floatingCard 4s ease-in-out infinite;
+}
+
+
+@keyframes floatingCard {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+.floating-card-icon {
+    display: grid;
+    place-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #fff0e5;
+
+    color: var(--travel-accent);
+
+    font-size: 20px;
+}
+
+
+.hero-floating-card span {
+    display: block;
+
+    font-size: 12px;
+
+    color: var(--travel-muted);
+}
+
+
+.hero-floating-card strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-top: 5px;
+}
+
+
+.hero-floating-card > i {
+    margin-left: 10px;
+
+    color: var(--travel-accent);
+}
+
+
+/* Hero Bottom */
+
+.hero-bottom {
+    position: absolute;
+
+    bottom: 30px;
+    left: 5%;
+    right: 5%;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.hero-scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.hero-scroll-indicator span {
+    width: 25px;
+    height: 35px;
+
+    border: 1px solid white;
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+
+.hero-scroll-indicator span::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 8px;
+
+    background: white;
+
+    border-radius: 4px;
+
+    top: 7px;
+    left: 10px;
+
+    animation: scrollMove 1.5s infinite;
+}
+
+
+@keyframes scrollMove {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+
+.hero-social-links {
+    display: flex;
+    gap: 12px;
+}
+
+
+.hero-social-links a {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    color: white;
+
+    transition: var(--travel-transition);
+}
+
+
+.hero-social-links a:hover {
+    background: var(--travel-accent);
+
+    border-color: var(--travel-accent);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   5. SEARCH SECTION
+========================================================= */
+
+.travel-search-section {
+    z-index: 5;
+
+    margin-top: -55px;
+
+    padding: 0 20px;
+}
+
+
+.travel-search-container {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 70px rgba(16, 29, 58, 0.13);
+}
+
+
+.travel-search-heading {
+    margin-bottom: 25px;
+}
+
+
+.travel-search-heading span {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--travel-accent);
+
+    font-weight: 800;
+}
+
+
+.travel-search-heading h2 {
+    margin: 10px 0 0;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.travel-search-form {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
+
+    border: 1px solid var(--travel-border);
+
+    border-radius: 13px;
+
+    transition: var(--travel-transition);
+}
+
+
+.search-field:focus-within {
+    border-color: var(--travel-accent);
+
+    box-shadow:
+        0 0 0 4px rgba(233, 154, 98, 0.12);
+}
+
+
+.search-field-icon {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    background: #fff1e7;
+
+    color: var(--travel-accent);
+
+    border-radius: 10px;
+}
+
+
+.search-field-content {
+    min-width: 0;
+    flex: 1;
+}
+
+
+.search-field-content label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.search-field-content input,
+.search-field-content select {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--travel-text);
+
+    font-size: 13px;
+}
+
+
+.travel-search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    height: 60px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    background: var(--travel-primary);
+
+    color: white;
+
+    border-radius: 13px;
+
+    font-weight: 700;
+
+    transition: var(--travel-transition);
+}
+
+
+.travel-search-button:hover {
+    background: var(--travel-accent);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   6. SECTION HEADER
+========================================================= */
+
+.trending-section {
+    padding: 110px 0 90px;
+}
+
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+}
+
+
+.section-eyebrow {
+    display: inline-block;
+
+    color: var(--travel-accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-header h2,
+.benefits-heading h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin: 0;
+}
+
+
+.section-header h2 span,
+.benefits-heading h2 span {
+    color: var(--travel-accent);
+}
+
+
+.section-header p,
+.benefits-heading p {
+    color: var(--travel-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 15px 0 0;
+}
+
+
+.section-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--travel-primary);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: var(--travel-transition);
+}
+
+
+.section-view-all i {
+    color: var(--travel-accent);
+
+    transition: transform 0.3s ease;
+}
+
+
+.section-view-all:hover {
+    color: var(--travel-accent);
+}
+
+
+.section-view-all:hover i {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   7. DESTINATION GRID
+========================================================= */
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+.destination-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid #edf0f4;
+
+    transition: var(--travel-transition);
+}
+
+
+.destination-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 50px rgba(16, 29, 58, 0.12);
+}
+
+
+.destination-image-wrapper {
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+}
+
+
+.destination-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.5s ease;
+}
+
+
+.destination-card:hover .destination-image {
+    transform: scale(1.08);
+
+    filter: brightness(0.85);
+}
+
+
+/* Tag */
+
+.destination-tag {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 13px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: var(--travel-primary);
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Favorite */
+
+.destination-favorite {
+    position: absolute;
+
+    top: 17px;
+    right: 17px;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: var(--travel-primary);
+
+    transition: var(--travel-transition);
+}
+
+
+.destination-favorite:hover,
+.destination-favorite.active {
+    background: #ff5e78;
+
+    color: white;
+
+    transform: scale(1.1);
+}
+
+
+/* Destination Content */
+
+.destination-image-content {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 30px 20px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.75)
+        );
+}
+
+
+.destination-image-content > span {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    opacity: 0.85;
+}
+
+
+.destination-image-content h3 {
+    font-size: 27px;
+
+    margin: 8px 0;
+}
+
+
+.destination-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 12px;
+
+    opacity: 0.9;
+}
+
+
+.destination-location i {
+    color: var(--travel-accent);
+}
+
+
+/* Destination Footer */
+
+.destination-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+
+.destination-card-footer span {
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--travel-muted);
+
+    margin-bottom: 5px;
+}
+
+
+.destination-card-footer strong {
+    font-size: 18px;
+
+    color: var(--travel-primary);
+}
+
+
+.destination-card-footer > a {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #fff0e5;
+
+    color: var(--travel-accent);
+
+    transition: var(--travel-transition);
+}
+
+
+.destination-card-footer > a:hover {
+    background: var(--travel-accent);
+
+    color: white;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   8. EXPERIENCE SECTION
+========================================================= */
+
+.experience-section {
+    padding: 100px 0;
+
+    background: #f8f9fc;
+}
+
+
+.experience-container {
+    width: min(1150px, 90%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.experience-image-area {
+    position: relative;
+}
+
+
+.experience-main-image {
+    width: 100%;
+
+    height: 580px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    box-shadow: var(--travel-shadow);
+
+    transition: transform 0.5s ease;
+}
+
+
+.experience-image-area:hover .experience-main-image {
+    transform: scale(1.02);
+}
+
+
+/* Floating Badge */
+
+.experience-floating-badge {
+    position: absolute;
+
+    right: -30px;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 22px 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: var(--travel-shadow);
+}
+
+
+.experience-badge-icon {
+    display: grid;
+    place-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    background: #fff0e5;
+
+    color: var(--travel-accent);
+
+    border-radius: 14px;
+
+    font-size: 23px;
+}
+
+
+.experience-floating-badge strong {
+    display: block;
+
+    font-size: 25px;
+
+    color: var(--travel-primary);
+}
+
+
+.experience-floating-badge span {
+    display: block;
+
+    font-size: 12px;
+
+    color: var(--travel-muted);
+}
+
+
+/* Experience Content */
+
+.experience-content h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(35px, 4vw, 50px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin: 0 0 20px;
+}
+
+
+.experience-content h2 span {
+    display: block;
+
+    color: var(--travel-accent);
+}
+
+
+.experience-content > p {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: var(--travel-muted);
+
+    margin-bottom: 35px;
+}
+
+
+/* Benefits */
+
+.experience-benefits {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+.experience-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+
+.benefit-icon {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    background: #fff0e5;
+
+    color: var(--travel-accent);
+
+    border-radius: 14px;
+
+    font-size: 20px;
+}
+
+
+.experience-benefit h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.experience-benefit p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--travel-muted);
+
+    line-height: 1.7;
+}
+
+
+.experience-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding: 16px 25px;
+
+    background: var(--travel-primary);
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: var(--travel-transition);
+}
+
+
+.experience-button:hover {
+    background: var(--travel-accent);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   9. FEATURED EXPERIENCES
+========================================================= */
+
+.featured-section {
+    padding: 110px 0;
+}
+
+
+.featured-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    grid-template-rows: 270px 270px;
+
+    gap: 25px;
+}
+
+
+.featured-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--travel-primary);
+}
+
+
+.featured-large {
+    grid-row: span 2;
+}
+
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+
+.featured-card:hover .featured-image {
+    transform: scale(1.1);
+}
+
+
+.featured-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0, 0, 0, 0.78)
+        );
+}
+
+
+.featured-overlay > span {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #ffc79c;
+}
+
+
+.featured-overlay h3 {
+    font-size: 28px;
+
+    margin: 10px 0;
+}
+
+
+.featured-overlay p {
+    font-size: 13px;
+
+    margin: 0 0 20px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.featured-overlay a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    width: fit-content;
+
+    transition: var(--travel-transition);
+}
+
+
+.featured-overlay a:hover {
+    color: var(--travel-accent);
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   10. TRAVEL BENEFITS
+========================================================= */
+
+.travel-benefits-section {
+    padding: 100px 0;
+
+    background: #f8f9fc;
+}
+
+
+.benefits-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+
+.travel-benefits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.travel-benefit-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #edf0f4;
+
+    transition: var(--travel-transition);
+}
+
+
+.travel-benefit-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: var(--travel-shadow);
+
+    border-color: transparent;
+}
+
+
+.travel-benefit-icon {
+    display: grid;
+    place-items: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    background: #fff0e5;
+
+    color: var(--travel-accent);
+
+    border-radius: 20px;
+
+    font-size: 28px;
+
+    transition: var(--travel-transition);
+}
+
+
+.travel-benefit-card:hover .travel-benefit-icon {
+    background: var(--travel-accent);
+
+    color: white;
+
+    transform: rotate(-8deg);
+}
+
+
+.travel-benefit-card h3 {
+    font-size: 17px;
+
+    margin: 0 0 12px;
+}
+
+
+.travel-benefit-card p {
+    color: var(--travel-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   11. FINAL CTA
+========================================================= */
+
+.travel-cta-section {
+    min-height: 550px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+
+.travel-cta-background {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.travel-cta-background img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 10s ease;
+}
+
+
+.travel-cta-section:hover .travel-cta-background img {
+    transform: scale(1.08);
+}
+
+
+.travel-cta-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 25, 48, 0.88),
+            rgba(10, 25, 48, 0.48)
+        );
+}
+
+
+.travel-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 90%);
+
+    text-align: center;
+
+    padding: 100px 0;
+}
+
+
+.travel-cta-content > span {
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #ffc79c;
+}
+
+
+.travel-cta-content h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(40px, 6vw, 70px);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin: 25px 0;
+}
+
+
+.travel-cta-content h2 em {
+    color: var(--travel-accent);
+
+    font-style: italic;
+}
+
+
+.travel-cta-content p {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.travel-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 30px;
+
+    background: var(--travel-accent);
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: var(--travel-transition);
+}
+
+
+.travel-cta-button:hover {
+    background: white;
+
+    color: var(--travel-primary);
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   12. SCROLL REVEAL ANIMATIONS
+========================================================= */
+
+.stackly-reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.stackly-reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   13. IMAGE HOVER TRANSITIONS
+========================================================= */
+
+.destination-image,
+.featured-image,
+.experience-main-image {
+    will-change: transform;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE — LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .destination-image-wrapper {
+        height: 380px;
+    }
+
+
+    .travel-search-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .travel-search-button {
+        grid-column: span 2;
+    }
+
+
+    .experience-container {
+        gap: 45px;
+    }
+
+
+    .experience-main-image {
+        height: 480px;
+    }
+
+
+    .travel-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — TABLETS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .home-hero {
+        min-height: 700px;
+    }
+
+
+    .hero-container {
+        padding: 120px 0 100px;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(42px, 9vw, 60px);
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-content > p {
+        font-size: 15px;
+    }
+
+
+    .hero-floating-card {
+        display: none;
+    }
+
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8, 20, 39, 0.85),
+                rgba(8, 20, 39, 0.4)
+            );
+    }
+
+
+    .travel-search-section {
+        margin-top: -35px;
+    }
+
+
+    .travel-search-container {
+        padding: 25px;
+    }
+
+
+    .travel-search-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .travel-search-button {
+        grid-column: auto;
+    }
+
+
+    .trending-section,
+    .featured-section {
+        padding: 75px 0;
+    }
+
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .destination-grid {
+        gap: 18px;
+    }
+
+
+    .destination-image-wrapper {
+        height: 320px;
+    }
+
+
+    .experience-section {
+        padding: 75px 0;
+    }
+
+
+    .experience-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .experience-main-image {
+        height: 450px;
+    }
+
+
+    .experience-floating-badge {
+        right: 15px;
+    }
+
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 350px 300px 300px;
+    }
+
+
+    .featured-large {
+        grid-row: auto;
+    }
+
+
+    .travel-benefits-section {
+        padding: 75px 0;
+    }
+
+
+    .travel-cta-section {
+        min-height: 450px;
+    }
+
+}
+
+
+/* =========================================================
+   16. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .section-container {
+        width: 92%;
+    }
+
+
+    .home-hero {
+        min-height: 650px;
+    }
+
+
+    .hero-container {
+        width: 92%;
+
+        padding: 110px 0 90px;
+    }
+
+
+    .hero-eyebrow {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 42px;
+
+        line-height: 1.12;
+    }
+
+
+    .hero-content > p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .hero-primary-button {
+        padding: 15px 22px;
+
+        font-size: 13px;
+    }
+
+
+    .hero-secondary-button {
+        font-size: 13px;
+    }
+
+
+    .hero-trust {
+        margin-top: 30px;
+    }
+
+
+    .hero-bottom {
+        bottom: 20px;
+    }
+
+
+    .hero-scroll-indicator {
+        font-size: 10px;
+    }
+
+
+    .hero-social-links {
+        gap: 6px;
+    }
+
+
+    .hero-social-links a {
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+
+    .travel-search-container {
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .travel-search-heading h2 {
+        font-size: 21px;
+    }
+
+
+    .search-field {
+        padding: 12px;
+    }
+
+
+    .trending-section,
+    .featured-section {
+        padding: 60px 0;
+    }
+
+
+    .section-header h2,
+    .benefits-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .section-header p,
+    .benefits-heading p {
+        font-size: 13px;
+    }
+
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .destination-image-wrapper {
+        height: 400px;
+    }
+
+
+    .experience-section {
+        padding: 60px 0;
+    }
+
+
+    .experience-main-image {
+        height: 380px;
+
+        border-radius: 18px;
+    }
+
+
+    .experience-content h2 {
+        font-size: 35px;
+    }
+
+
+    .experience-floating-badge {
+        padding: 15px 20px;
+
+        bottom: 20px;
+    }
+
+
+    .experience-benefit h3 {
+        font-size: 14px;
+    }
+
+
+    .experience-benefit p {
+        font-size: 12px;
+    }
+
+
+    .featured-grid {
+        grid-template-rows: 300px 260px 260px;
+
+        gap: 18px;
+    }
+
+
+    .featured-overlay {
+        padding: 22px;
+    }
+
+
+    .featured-overlay h3 {
+        font-size: 23px;
+    }
+
+
+    .travel-benefits-section {
+        padding: 60px 0;
+    }
+
+
+    .travel-benefits-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .travel-benefit-card {
+        padding: 30px 20px;
+    }
+
+
+    .travel-cta-content h2 {
+        font-size: 40px;
+    }
+
+
+    .travel-cta-content p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   17. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
