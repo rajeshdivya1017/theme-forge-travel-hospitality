@@ -538,9 +538,8 @@ function initializeStacklyPreloader() {
 
 }
 
-
 /* =========================================================
-   5. MOBILE NAVIGATION
+   5. MOBILE NAVIGATION — BACKGROUND SCROLL LOCK
 ========================================================= */
 
 function initializeStacklyNavigation() {
@@ -553,54 +552,90 @@ function initializeStacklyNavigation() {
 
     if (!menuToggle || !navigation) return;
 
-    menuToggle.addEventListener("click", () => {
+    let savedScrollY = 0;
 
-        const isOpen =
-            navigation.classList.toggle("mobile-open");
+    function openMenu() {
+
+        savedScrollY = window.scrollY;
+
+        navigation.classList.add("mobile-open");
 
         menuToggle.setAttribute(
             "aria-expanded",
-            String(isOpen)
+            "true"
         );
 
-        menuToggle.innerHTML =
-            isOpen ? "&times;" : "☰";
+        menuToggle.innerHTML = "&times;";
+
+        /* LOCK BACKGROUND SCROLL */
+
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+
+        navigation.classList.remove("mobile-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.innerHTML = "☰";
+
+        /* RESTORE BACKGROUND SCROLL */
+
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+
+        window.scrollTo(0, savedScrollY);
+    }
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            navigation.classList.contains("mobile-open");
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
 
     });
+
+    /* CLOSE MENU WHEN NAV LINK CLICKED */
 
     navigation.querySelectorAll("a").forEach(link => {
 
-        link.addEventListener("click", () => {
-
-            navigation.classList.remove("mobile-open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.innerHTML = "☰";
-
-        });
+        link.addEventListener("click", closeMenu);
 
     });
+
+    /* CLOSE MENU WHEN CLICKING OUTSIDE */
 
     document.addEventListener("click", event => {
 
         if (
+            navigation.classList.contains("mobile-open") &&
             !navigation.contains(event.target) &&
             !menuToggle.contains(event.target)
         ) {
+            closeMenu();
+        }
 
-            navigation.classList.remove("mobile-open");
+    });
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+    /* CLOSE MENU WITH ESCAPE */
 
-            menuToggle.innerHTML = "☰";
+    document.addEventListener("keydown", event => {
 
+        if (
+            event.key === "Escape" &&
+            navigation.classList.contains("mobile-open")
+        ) {
+            closeMenu();
         }
 
     });
